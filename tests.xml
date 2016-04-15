@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<ct:Tests last-modified="2010-04-26" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <ct:Test name="OriginatorValid" criticality="Error" description="Originator must be `I', `M', `J', or `K'"><![CDATA[str(.) == "I" || str(.) == "M" || str(.) == "J" || str(.) == "K"]]></ct:Test>
+  <ct:Test name="ProductTypeIsEmwc" criticality="Error" description="Product type must be equal to 39 for EMWC"><![CDATA[int(.) == 39]]></ct:Test>
+  <ct:Test name="SpacecraftIsErs2" criticality="Error" description="Spacecraft must be 2 for ERS-2"><![CDATA[int(.) == 2]]></ct:Test>
+  <ct:Test name="BeginningOfProductUtcValid" criticality="Error" description="Time at beginning of product must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="ProcessingStationValid" criticality="Error" description="Station ID where data was processed must be in the range [1, 15]"><![CDATA[int(.) >= 1 && int(.) <= 15]]></ct:Test>
+  <ct:Test name="PcdSummaryFlag" criticality="Warning" description="When PCD summary flag is not set to 0, some error occurred during processing"><![CDATA[int(.) & 1 == 0]]></ct:Test>
+  <ct:Test name="GenerationTimeValid" criticality="Error" description="Time when product was generated must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="SphSizeEmwcValid" criticality="Error" description="SPH size for EMWC product must be 316"><![CDATA[int(.) == 316]]></ct:Test>
+  <ct:Test name="NumDsrEmwcValid" criticality="Error" description="Number of data set records for EMWC product must be 1"><![CDATA[int(.) == 1]]></ct:Test>
+  <ct:Test name="DsrSizeEmwcValid" criticality="Error" description="Size of data set record for EMWC product must be 900"><![CDATA[int(.) == 900]]></ct:Test>
+  <ct:Test name="SubsystemValid" criticality="Error" description="Subsystem that generated product must be in the range [0, 4]"><![CDATA[int(.) >= 0 && int(.) <= 4]]></ct:Test>
+  <ct:Test name="ObrcFlagValid" criticality="Error" description="OBRC flag must be in the range [0, 2]"><![CDATA[int(.) >= 0 && int(.) <= 2]]></ct:Test>
+  <ct:Test name="RefUtcValid" criticality="Error" description="Reference UTC time must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="ClockStepValid" criticality="Error" description="Step length of satellite clock must be larger than 0"><![CDATA[int(.) >= 0]]></ct:Test>
+  <ct:Test name="AscUtcValid" criticality="Error" description="UTC time of ascending node state vector must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+  <ct:Test name="DownlinkedFormatQualityLowerThanThreshold" criticality="Error" description="Quality of downlinked formats must be lower than threshold."><![CDATA[int(.) == 0 || int(.) == 2]]></ct:Test>
+  <ct:Test name="PerformanceKnown" criticality="Warning" description="Value must be known."><![CDATA[int(.) != 2]]></ct:Test>
+  <ct:Test name="PercFrameChecksumErrorLowerThanThreshold" criticality="Error" description="Percentage of frames with checksum error must be lower than threshold."><![CDATA[int(.) == 0 || int(.) == 2]]></ct:Test>
+  <ct:Test name="AscUtcValid" criticality="Error" description="UTC time of ascending node state vector must not be NaN"><![CDATA[!isnan(float(.))]]></ct:Test>
+</ct:Tests>

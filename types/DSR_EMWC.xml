@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<cd:Record format="binary" name="DSR_EMWC" last-modified="2010-03-16" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07">
+  <cd:Field name="dr_num">
+    <cd:Integer>
+      <cd:Description>Data record number (always 1)</cd:Description>
+      <cd:NativeType>int32</cd:NativeType>
+      <cd:BitSize>32</cd:BitSize>
+      <cd:LittleEndian/>
+    </cd:Integer>
+  </cd:Field>
+  <cd:Field name="mw_science_pkt">
+    <cd:Array>
+      <cd:Dimension>896</cd:Dimension>
+      <cd:Integer>
+        <cd:NativeType>uint8</cd:NativeType>
+        <cd:BitSize>8</cd:BitSize>
+      </cd:Integer>
+    </cd:Array>
+  </cd:Field>
+</cd:Record>

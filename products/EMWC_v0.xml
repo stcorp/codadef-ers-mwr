@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<cd:ProductDefinition id="EMWC_v0" format="binary" last-modified="2010-04-26" xmlns:cd="http://www.stcorp.nl/coda/definition/2008/07" xmlns:ct="http://www.stcorp.nl/coda/test/2008/10">
+  <cd:Array>
+    <cd:Dimension>filesize()/1391</cd:Dimension>
+    <cd:Record format="binary">
+      <cd:Field name="mph">
+        <cd:NamedType id="MPH"/>
+      </cd:Field>
+      <cd:Field name="sph">
+        <cd:NamedType id="SPH_EMWC"/>
+      </cd:Field>
+      <cd:Field name="dsr">
+        <cd:NamedType id="DSR_EMWC"/>
+      </cd:Field>
+      <ct:NamedTest id="ProductTypeIsEmwc" path="mph/prod_type" />
+      <ct:NamedTest id="SpacecraftIsErs2" path="mph/sc_id" />
+      <ct:NamedTest id="SphSizeEmwcValid" path="mph/sph_size" />
+      <ct:NamedTest id="NumDsrEmwcValid" path="mph/no_of_dsrs" />
+      <ct:NamedTest id="DsrSizeEmwcValid" path="mph/dsr_size" />
+    </cd:Record>
+  </cd:Array>
+</cd:ProductDefinition>
